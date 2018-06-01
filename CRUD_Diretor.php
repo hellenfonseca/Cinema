@@ -1,6 +1,7 @@
 <?php
-
+include "mapeamento/Diretor.php";
 class CRUD_Diretor{
+    
 
     public function insert(){
         try{
