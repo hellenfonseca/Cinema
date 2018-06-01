@@ -4,7 +4,7 @@ class CRUD_Diretor{
 
     public function insert(){
         try{
-            require "bootstrap.php";
+            require "doctrine/bootstrap.php";
 
             $diretor = new Diretor;            
             $diretor->setNome($_POST["nome"]);
@@ -24,7 +24,7 @@ class CRUD_Diretor{
 
     public function update(){
         try{
-            require "bootstrap.php";
+            require "doctrine/bootstrap.php";
 
             $diretor = $entityManager->find('Diretor', $_POST["id"]);    
 
@@ -45,7 +45,7 @@ class CRUD_Diretor{
 
     public function delete(){
         try{
-            require "bootstrap.php";
+            require "doctrine/bootstrap.php";
             
             $diretor = $entityManager->find('Diretor', $_POST["id"]);    
 
@@ -60,7 +60,7 @@ class CRUD_Diretor{
     }
 
     public function getAll(){
-        require "bootstrap.php";
+        require "doctrine/bootstrap.php";
         $diretores = $entityManager->getRepository("Diretor")->findAll();
         return $diretores;
     }
