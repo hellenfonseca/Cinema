@@ -16,10 +16,12 @@ class CRUD_Diretor{
             $entityManager->persist($diretor); 
             $entityManager->flush();
 
-            echo ("Diretor Cadastrado!");     
+            echo ("Diretor Cadastrado!");
+            echo "<br><a href='index.php'>Voltar</a>";    
         }
         catch(Exception $e){
-            echo ("Erro!");              
+            echo ("Erro!");
+            echo "<br><a href='index.php'>Voltar</a>";              
         }
     }
 
@@ -37,10 +39,12 @@ class CRUD_Diretor{
             $entityManager->persist($diretor); 
             $entityManager->flush();
 
-            echo ("Diretor Atualizado!");     
+            echo ("Diretor Atualizado!");  
+            echo "<br><a href='index.php'>Voltar</a>";    
         }
         catch(Exception $e){
-            echo ("Erro!");              
+            echo ("Erro!");   
+            echo "<br><a href='index.php'>Voltar</a>";            
         }
     }
 
@@ -53,10 +57,12 @@ class CRUD_Diretor{
             $entityManager->remove($diretor); 
             $entityManager->flush();
 
-            echo ("Diretor Deletado!");     
+            echo ("Diretor Deletado!");
+            echo "<br><a href='index.php'>Voltar</a>";      
         }
         catch(Exception $e){
-            echo ("Erro!");              
+            echo ("Erro!");
+            echo "<br><a href='index.php'>Voltar</a>";               
         }
     }
 

@@ -46,7 +46,6 @@ window.onload = function() {
 
 
 <div id="create" class="formularios">
-    <h3>Inserir</h3>
     <form action="dashboard.php" method="POST">
     Nome<br><input type="text" name="nome"/><br>
     Endereço<br><input type="text" name="endereco"/><br>
@@ -58,14 +57,40 @@ window.onload = function() {
 </div>
 
 <div id="read" class="formularios">
-    <h3>Consultar Todos</h3>
-    <form action="dashboard.php" method="POST">
-        <input type="submit" name="read"/>
-    </form>
+    <table>
+    <thead>
+        <tr>
+            <td><strong>ID</td>
+            <td><strong>Nome</td>
+            <td><strong>Endereço</td>
+            <td><strong>Telefone</td>
+            <td><strong>Email</td>
+        </tr>
+    </thead>
+    </tbody>
+        <?php
+        require "CRUD_Diretor.php";
+        $diretores = new CRUD_Diretor();
+        $query = $diretores->getAll();
+
+        for ($i=0; $i < count($query); $i++) {
+        ?>
+        <tr>
+            <td><?= $query[$i]->getId() ?></td>
+            <td><?= $query[$i]->getNome() ?></td>
+            <td><?= $query[$i]->getEndereco() ?></td>
+            <td><?= $query[$i]->getTelefone() ?></td>
+            <td><?= $query[$i]->getEmail() ?></td>
+            <br>
+        </tr>
+        <?php
+        }
+        ?>
+    </tbody>
+    </table>
 </div>
 
 <div id="update" class="formularios">
-    <h3>Atualizar</h3>
     <form action="dashboard.php" method="POST">
         ID<br><input type="number" name="id"/><br>
         Nome<br><input type="text" name="nome"/><br>
@@ -78,7 +103,6 @@ window.onload = function() {
 </div>
 
 <div id="delete" class="formularios">
-    <h3>Remover</h3>
     <form action="dashboard.php" method="POST">
         ID<br><input type="number" name="id"/><br><br>
         <input type="submit" name="delete" />

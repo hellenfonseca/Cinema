@@ -10,7 +10,7 @@ $isDevMode = true;
 $dbParams = array(
     'driver'   => 'pdo_mysql',
     'user'     => 'root',
-    'password' => '',
+    'password' => 'root',
     'dbname'   => 'cinema',
 );
 
